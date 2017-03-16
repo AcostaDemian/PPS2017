@@ -5,9 +5,16 @@
     require 'vendor/autoload.php';
 
     $app = new \Slim\App;
-    $app->get('/hello/{name}', function (Request $request, Response $response) {
+    
+    $app->get('/', function (Request $request, Response $response) {
+        $response->getBody()->write("Hola, vos quien sos?");
+
+        return $response;
+    });
+
+    $app->get('/hola/{name}', function (Request $request, Response $response) {
         $name = $request->getAttribute('name');
-        $response->getBody()->write("Hello, $name");
+        $response->getBody()->write("Hola, $name");
 
         return $response;
     });
