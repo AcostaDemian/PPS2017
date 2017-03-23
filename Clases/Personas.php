@@ -103,9 +103,9 @@ class Persona
 			$consulta =$objetoAccesoDato->RetornarConsulta("
 				update persona 
 				set nombre=:nombre,
-				apellido=:apellido,
+				apellido=:apellido
 				WHERE id=:id");
-			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+			//$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 			//$consulta =$objetoAccesoDato->RetornarConsulta("CALL ModificarPersona(:id,:nombre,:apellido)");
 			$consulta->bindValue(':id',$persona->id, PDO::PARAM_INT);
 			$consulta->bindValue(':nombre',$persona->nombre, PDO::PARAM_STR);
