@@ -72,8 +72,7 @@ class Persona
 		$consulta->bindValue(':id', $idParametro, PDO::PARAM_INT);
 		$consulta->execute();
 		$personaBuscada= $consulta->fetchObject('persona');
-		return $personaBuscada;
-					
+		return $personaBuscada;					
 	}
 	
 	public static function TraerTodasLasPersonas()
@@ -125,4 +124,16 @@ class Persona
 		$consulta->execute();
 		return $objetoAccesoDato->RetornarUltimoIdInsertado();
 	}	
+
+	public static function Logear($persona)
+	{	
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("SELECT * FROM persona WHERE dni =:dni AND nombre =:nombre");
+		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL TraerUnaPersona(:id)");
+		$consulta->bindValue(':nombre', $persona->nombre, PDO::PARAM_STR);
+		$consulta->bindValue(':dni', $persona->dni, PDO::PARAM_STR);
+		$consulta->execute();
+		$personaBuscada= $consulta->fetchObject('persona');
+		return $personaBuscada;					
+	}
 }

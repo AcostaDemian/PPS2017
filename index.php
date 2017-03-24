@@ -7,6 +7,21 @@
 
     $app = new \Slim\App;
 
+    $app->post('/persona/login', function ($req, $res, $args) {
+        $perConst = new Persona();
+        $perConst->SetNombre($req->getParam('nombre'));
+        $perConst->SetDni($req->getParam('dni'));
+
+        return $res
+           ->withHeader('Content-type', 'application/json')
+           ->getBody()
+           ->write(
+            json_encode(
+                Persona::Logear($perConst)
+            )
+        );
+    });
+
     //http://localhost:8080/PPS/index.php/personas    
     $app->get('/personas', function ($req, $res, $args) {
         
