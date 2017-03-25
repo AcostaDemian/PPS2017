@@ -3,7 +3,7 @@ function agregar()
         $.ajax({
                     type:"POST",
                     dataType: "json",
-                    url:"http://localhost:8080/Acosta/index.php/persona/guardar",
+                    url:"./index.php/persona/guardar",
                     data: {
                         "nombre" : document.getElementById("nombreOtro").value,
                         "apellido" : document.getElementById("apellidoOtro").value,
@@ -24,7 +24,7 @@ function modificar()
         $.ajax({
                     type:"PUT",
                     dataType: "json",
-                    url:"http://localhost:8080/Acosta/index.php/persona/modificar",
+                    url:"./index.php/persona/modificar",
                     data: {
                         "nombre" : document.getElementById("nombreOtro").value,
                         "apellido" : document.getElementById("apellidoOtro").value,
@@ -46,7 +46,7 @@ function borrar()
         $.ajax({
                     type:"DELETE",
                     dataType: "json",
-                    url:"http://localhost:8080/Acosta/index.php/persona/borrar",
+                    url:"./index.php/persona/borrar",
                     data: {
                         "id" : document.getElementById("idOtro").value
                     }
