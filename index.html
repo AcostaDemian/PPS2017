@@ -1,11 +1,40 @@
 <html>
-    <head>        
+    <head>  
+        <script type="text/javascript" src="js/jquery.js"> </script>     
+        <script type="text/javascript" src="js/funciones.js"> </script> 
     </head>
     <body>
+        <form action="http://localhost:8080/Acosta/index.php/persona/login" method="POST">
+            <h1>Login</h1>
+            <input type="text" name="nombre" placeholder="Nombre"> </input>
+            <input type="password" name="dni" placeholder="DNI"> </input>
+            <input type="submit"></input>
+        </form> 
 
-        <input type="text"> </input>
-        <input type="password"> </input>
-        <button> Enviar </input>
-        
+        <form action="http://localhost:8080/Acosta/index.php/personas" method="GET">
+            <h1>Mostrar Personas</h1>
+            <input type="submit"></input>
+        </form> 
+
+        <form action="http://localhost:8080/Acosta/index.php/persona" method="GET">
+            <h1>Mostrar Persona</h1>
+            <input type="text" name="id" placeholder="DNI"> </input>
+            <input type="submit"></input>
+        </form> 
+
+        <div>
+            
+			<input placeholder="ID" type="Text" id="idOtro"/><br>
+
+			<input placeholder="Nombre" type="Text" id="nombreOtro"/><br>
+
+			<input placeholder="Apellido" type="Text" id="apellidoOtro"/><br>
+
+			<input placeholder="DNI" type="Text" id="dniOtro"/><br>            
+			
+			<input type="button" value="Agregar" onclick="agregar()"/> 
+			<input type="button" value="Modificar" onclick="modificar()"/>
+			<input type="button" value="Borrar" onclick="borrar()"/> 
+        </div> 
     </body>
 </html>
